@@ -1,0 +1,33 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="description">Description</label>
+    <input
+      type="text"
+      name="description"
+      [(ngModel)]="description"
+      id="description"
+      placeholder="Add description"
+    />
+  </div>
+  <div class="form-control">
+    <label for="amount">Amount</label>
+    <input
+      type="number"
+      name="amount"
+      [(ngModel)]="amount"
+      id="amount"
+      placeholder="0"
+    />
+  </div>
+  <div class="form-control form-control-check">
+    <label for="expense">Expense?</label>
+    <input
+      type="checkbox"
+      name="expense"
+      [(ngModel)]="expense"
+      id="expense"
+      checked
+    />
+  </div>
+  <input type="submit" value="Save expense" class="btn btn-block" />
+</form>

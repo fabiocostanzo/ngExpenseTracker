@@ -32,4 +32,8 @@ export class ExpenseService {
       httpOptions
     );
   }
+
+  addExpense(expense: Expense): Observable<Expense> {
+    return this.http.post<Expense>(this.apiUrl, expense, httpOptions);
+  }
 }
