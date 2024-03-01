@@ -1,4 +1,8 @@
-<div class="expense">
+<div
+  class="expense"
+  [class.income]="!expense.expense"
+  (dblclick)="onToggle(expense)"
+>
   <h3>{{ expense.description }}</h3>
   <p>
     @if(expense.expense) { -{{ expense.amount }}

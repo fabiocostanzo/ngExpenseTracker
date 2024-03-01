@@ -13,9 +13,14 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 export class ExpenseItemComponent {
   @Input() expense!: Expense;
   @Output() onDeleteExpense: EventEmitter<Expense> = new EventEmitter();
+  @Output() onToggleExpense: EventEmitter<Expense> = new EventEmitter();
   faTimes = faTimes;
 
   onDelete(expense: Expense) {
     this.onDeleteExpense.emit(expense);
+  }
+
+  onToggle(expense: Expense) {
+    this.onToggleExpense.emit(expense);
   }
 }

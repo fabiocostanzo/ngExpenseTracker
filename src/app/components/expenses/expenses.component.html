@@ -1,3 +1,7 @@
 @for (expense of expenses; track expense.id) {
-<app-expense-item [expense]="expense" (onDeleteExpense)="deleteExpense(expense)" />
+<app-expense-item
+  [expense]="expense"
+  (onDeleteExpense)="deleteExpense(expense)"
+  (onToggleExpense)="toggleExpense(expense)"
+/>
 }

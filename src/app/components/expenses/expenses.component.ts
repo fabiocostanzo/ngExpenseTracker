@@ -28,4 +28,9 @@ export class ExpensesComponent implements OnInit {
         () => (this.expenses = this.expenses.filter((e) => e.id !== expense.id))
       );
   }
+
+  toggleExpense(expense: Expense) {
+    expense.expense = !expense.expense;
+    this.expenseService.updateExpense(expense).subscribe();
+  }
 }
