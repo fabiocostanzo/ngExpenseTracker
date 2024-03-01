@@ -1,3 +1,93 @@
 .add-form {
   margin-bottom: 40px;
 }
+
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.switch {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.switch input {
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid;
+  background: #e0ffd2;
+  outline: none;
+  cursor: pointer;
+}
+
+.switch input::before,
+.switch input::after {
+  z-index: 2;
+  position: absolute;
+  top: 56%;
+  transform: translateY(-50%);
+  font-weight: bolder;
+}
+
+.switch input::before {
+  content: "Expense";
+  left: 20px;
+  top: 25px;
+}
+
+.switch input::after {
+  content: "Income";
+  right: 25px;
+  top: 25px;
+}
+
+.switch input:checked {
+  background: #ffcbd0;
+}
+
+.switch label {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  bottom: 9px;
+  border-radius: 20px;
+}
+
+.switch input {
+}
+
+.switch input:checked::after,
+.switch input:checked::before {
+  color: #fff;
+}
+
+.switch input:checked + label {
+  left: 10px;
+  right: 100px;
+  background: #1e1e1e;
+}
+
+.switch input:not(:checked) {
+  background: #e0ffd2;
+}
+
+.switch input:not(:checked)::before {
+  color: #ffff;
+}
+
+.switch input:not(:checked)::after {
+  color: #ffff;
+}
+
+.switch input:not(:checked) + label {
+  left: 100px;
+  right: 10px;
+  background: #1e1e1e;
+}

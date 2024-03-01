@@ -1,7 +1,7 @@
 @if (showAddExpense) {
 <form class="add-form" (ngSubmit)="onSubmit()">
   <div class="form-control">
-    <label for="description">Description</label>
+    <label for="description"><h3>Description</h3></label>
     <input
       type="text"
       name="description"
@@ -11,7 +11,7 @@
     />
   </div>
   <div class="form-control">
-    <label for="amount">Amount</label>
+    <label for="amount"><h3>Amount</h3></label>
     <input
       type="number"
       name="amount"
@@ -20,15 +20,17 @@
       placeholder="0"
     />
   </div>
-  <div class="form-control form-control-check">
-    <label for="expense">Expense?</label>
-    <input
-      type="checkbox"
-      name="expense"
-      [(ngModel)]="expense"
-      id="expense"
-      checked
-    />
+  <div class="form-control">
+    <span class="switch">
+      <input
+        type="checkbox"
+        name="expense"
+        [(ngModel)]="expense"
+        id="expense"
+        checked
+      />
+      <label for="switch"></label>
+    </span>
   </div>
   <input type="submit" value="Save expense" class="btn btn-block" />
 </form>
