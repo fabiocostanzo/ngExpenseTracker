@@ -5,6 +5,10 @@
     }@else {
     {{ expense.amount }}
     } €
-    <fa-icon [styles]="{ color: 'red' }" [icon]="faTimes" />
+    <fa-icon
+      (click)="onDelete(expense)"
+      [styles]="{ color: 'red' }"
+      [icon]="faTimes"
+    />
   </p>
 </div>

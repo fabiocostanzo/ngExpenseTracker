@@ -20,4 +20,12 @@ export class ExpensesComponent implements OnInit {
       .getExpenses()
       .subscribe((expenses) => (this.expenses = expenses));
   }
+
+  deleteExpense(expense: Expense) {
+    this.expenseService
+      .deleteExpense(expense)
+      .subscribe(
+        () => (this.expenses = this.expenses.filter((e) => e.id !== expense.id))
+      );
+  }
 }
