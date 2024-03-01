@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { EXPENSES } from '../mock-expenses';
 import { Expense } from '../Expense';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExpenseService {
-  constructor() {}
+  private apiUrl = 'http://localhost:5000/expenses';
+
+  constructor(private http: HttpClient) {}
 
   getExpenses(): Observable<Expense[]> {
-    const expenses = of(EXPENSES);
-    return expenses;
+    return this.http.get<Expense[]>(this.apiUrl);
   }
 }
