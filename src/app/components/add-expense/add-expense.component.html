@@ -1,3 +1,4 @@
+@if (showAddExpense) {
 <form class="add-form" (ngSubmit)="onSubmit()">
   <div class="form-control">
     <label for="description">Description</label>
@@ -31,3 +32,4 @@
   </div>
   <input type="submit" value="Save expense" class="btn btn-block" />
 </form>
+}

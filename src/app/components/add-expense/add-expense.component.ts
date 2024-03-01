@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Expense } from '../../Expense';
+import { UiService } from '../../services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-expense',
@@ -15,6 +17,14 @@ export class AddExpenseComponent {
   description!: string;
   amount: number = 0;
   expense: boolean = true;
+  showAddExpense!: boolean;
+  subscription!: Subscription;
+
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddExpense = value));
+  }
 
   onSubmit() {
     if (!this.description) {
