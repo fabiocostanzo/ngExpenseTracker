@@ -6,12 +6,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid #000000;
+  border-radius: 10px;
 }
 
 .expense.income {
   background: #e0ffd2;
 }
-
 
 .expense h3 {
   display: flex;

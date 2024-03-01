@@ -34,7 +34,7 @@ export class AddExpenseComponent {
 
     const newExpense = {
       description: this.description,
-      amount: Number(this.amount),
+      amount: parseFloat(this.amount.toFixed(2)),
       expense: this.expense,
     };
 
