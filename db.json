@@ -1,33 +1,27 @@
 {
   "expenses": [
     {
-      "id": "1",
-      "description": "Gasoline",
-      "amount": 50,
-      "expense": true
-    },
-    {
-      "id": "2",
-      "description": "Grocery",
-      "amount": 25.99,
-      "expense": true
-    },
-    {
-      "id": "3",
-      "description": "Drugs",
-      "amount": 45,
-      "expense": true
-    },
-    {
-      "id": "4",
+      "id": "324e",
       "description": "Salary",
       "amount": 1800,
       "expense": false
     },
     {
-      "id": "5",
-      "description": "Test",
-      "amount": 1000,
+      "id": "52bb",
+      "description": "Drink",
+      "amount": 850,
+      "expense": true
+    },
+    {
+      "id": "2c88",
+      "description": "Drugs",
+      "amount": 30,
+      "expense": true
+    },
+    {
+      "id": "e92c",
+      "description": "Prostitution",
+      "amount": 600,
       "expense": true
     }
   ]
