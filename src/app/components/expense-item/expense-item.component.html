@@ -1,0 +1,10 @@
+<div class="expense">
+  <h3>{{ expense.description }}</h3>
+  <p>
+    @if(expense.expense) { -{{ expense.amount }}
+    }@else {
+    {{ expense.amount }}
+    } €
+    <fa-icon [styles]="{ color: 'red' }" [icon]="faTimes" />
+  </p>
+</div>

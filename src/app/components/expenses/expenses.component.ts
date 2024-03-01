@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Expense } from '../../Expense';
-import { EXPENSES } from '../../mock-expenses';
+import { ExpenseItemComponent } from '../expense-item/expense-item.component';
+import { ExpenseService } from '../../services/expense.service';
 
 @Component({
   selector: 'app-expenses',
   standalone: true,
-  imports: [],
+  imports: [ExpenseItemComponent],
   templateUrl: './expenses.component.html',
   styleUrl: './expenses.component.css',
 })
-export class ExpensesComponent {
-  expenses: Expense[] = EXPENSES;
+export class ExpensesComponent implements OnInit {
+  expenses: Expense[] = [];
+
+  constructor(private expenseService: ExpenseService) {}
+
+  ngOnInit(): void {
+    this.expenseService
+      .getExpenses()
+      .subscribe((expenses) => (this.expenses = expenses));
+  }
 }
